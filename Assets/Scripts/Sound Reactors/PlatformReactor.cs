@@ -7,63 +7,62 @@ public class PlatformReactor : SoundReactor
     bool canMove = false;
 
     [SerializeField]
-    private float MoveTime;
+    private float MoveSpeed;
 
     [SerializeField]
-    private Transform pointA;
+    private float WaitTime;
 
     [SerializeField]
-    private Transform pointB;
+    private Transform[] points;
 
-    [SerializeField]
-    private Transform Platform;
-    float value;
+    private int i = 0;
+    private bool reverse;
+    private int direction;
 
-    private void OnValidate()
-    {
-        pointA = transform.Find("pointA");
-        pointB = transform.Find("pointB");
-        Platform = transform.Find("Platform");
-
-        if (!pointA)
-            pointA = new GameObject("pointA").transform;
-        if (!pointB)
-            pointB = new GameObject("pointB").transform;
-    }
+    private void OnValidate() { }
 
     void Start()
     {
-        Platform.position = pointA.position;
+        StartCoroutine(MovePlatform());
     }
 
-    void Update()
+    IEnumerator MovePlatform()
     {
-        // if (!canMove)
-        // {
-        //     LeanTween.pause(Platform.gameObject);
-        //     return;
-        // }
+        while (true)
+        {
+            if(canMove)
+            {
 
-        // LeanTween.resume(Platform.gameObject);
-
-        Platform.position = Vector3.Lerp(pointA.position, pointB.position, value);
-
-        // LeanTween.init(800);
-        LeanTween
-            .value(Platform.gameObject, 0, 1, MoveTime)
-            .setLoopPingPong()
-            .setOnUpdate(
-                (float result) =>
+                Vector3 target = points[i].position;
+                while (transform.position != target)
                 {
-                    value = result;
+                    transform.position = Vector3.MoveTowards(
+                        transform.position,
+                        target,
+                        MoveSpeed * Time.deltaTime
+                    );
+
+                    yield return null;
                 }
-            );
+            
 
-        // LTSeq seq = LeanTween.sequence(true);
+            i += direction;
 
-        // seq.append(LeanTween.move(Platform.gameObject, pointB, MoveTime));
-        // seq.append(0.5f);
-        // seq.append(LeanTween.move(Platform.gameObject, pointA, MoveTime));
+            if (i >= points.Length || i < 0)
+            {
+                if (reverse)
+                {
+                    direction *= -1;
+                    i = Mathf.Clamp(i, 0, points.Length - 1);
+                }
+                else
+                {
+                    i = 0;
+                }
+            }
+            yield return new WaitForSeconds(1f);
+        }
+        }
     }
 
     protected override void PositiveReact(SoundEmitter soundEmitter)
