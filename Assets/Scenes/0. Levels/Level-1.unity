@@ -1862,7 +1862,7 @@ MonoBehaviour:
       texValue: {fileID: 2800000, guid: 2a2010daa05ec0e419984ac2eebbf71f, type: 3}
     - propertyName: _Color
       type: 0
-      colValue: {r: 1, g: 1, b: 1, a: 1}
+      colValue: {r: 0.90099996, g: 0.90099996, b: 0.90099996, a: 1}
       vecValue: {x: 0, y: 0, z: 0, w: 0}
       floatValue: 0
       texValue: {fileID: 0}
@@ -2045,7 +2045,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh61012
+  m_Name: pb_Mesh48442
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2209,7 +2209,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh60988
+  m_Name: pb_Mesh48418
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2418,7 +2418,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.5
-  m_Range: 15
+  m_Range: 30
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2458,8 +2458,8 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 9, y: 40}
-  m_BounceIntensity: 5
+  m_AreaSize: {x: 12, y: 45}
+  m_BounceIntensity: 6
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 1.1e-44, z: 0, w: 1.6114932e-38}
@@ -2488,7 +2488,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh61048
+  m_Name: pb_Mesh48478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2857,7 +2857,7 @@ MonoBehaviour:
       texValue: {fileID: 2800000, guid: 2a2010daa05ec0e419984ac2eebbf71f, type: 3}
     - propertyName: _Color
       type: 0
-      colValue: {r: 1, g: 1, b: 1, a: 1}
+      colValue: {r: 0.90099996, g: 0.90099996, b: 0.90099996, a: 1}
       vecValue: {x: 0, y: 0, z: 0, w: 0}
       floatValue: 0
       texValue: {fileID: 0}

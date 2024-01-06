@@ -17,13 +17,11 @@ public class SoundEmitter : MonoBehaviour
     [SerializeField]
     private float pitchControl;
 
-    [SerializeField]
-    private float Range;
+    [field: SerializeField]
+    public float Range { get; private set; }
 
     [SerializeField]
     private LayerMask NotReactors;
-
-    public float audibleRange { get; private set; }
 
     Collider[] reactors;
 
@@ -69,14 +67,13 @@ public class SoundEmitter : MonoBehaviour
         audioSource.volume = volumeControl;
         audioSource.pitch = pitchControl;
         audioSource.minDistance = Range;
-        audibleRange = Range * Volume;
     }
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         Volume = volumeControl;
-        Pitch = pitchControl;   
+        Pitch = pitchControl;
     }
 
     public void OnAmplify()
@@ -84,14 +81,13 @@ public class SoundEmitter : MonoBehaviour
         audioSource.volume = Volume;
         audioSource.pitch = Pitch;
 
-        audibleRange = Range * Volume;
         UpdateReactors();
         OnConfigChange?.Invoke(Volume, Pitch);
     }
 
     private void UpdateReactors()
     {
-        reactors = Physics.OverlapSphere(transform.position, audibleRange, NotReactors);
+        reactors = Physics.OverlapSphere(transform.position, Range, NotReactors);
 
         foreach (Collider reactor in reactors)
         {

@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4308049571283414034}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.35
   m_SlopeLimit: 45
-  m_StepOffset: 0.1
+  m_StepOffset: 0.3
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5418e7dc32d8a3f48a1d59833b3f467a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Range: 4
+  Range: 3
 --- !u!114 &8079843322984837468
 MonoBehaviour:
   m_ObjectHideFlags: 0
