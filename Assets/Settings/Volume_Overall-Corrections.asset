@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7413111614841892286
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
-  m_Name: ChromaticAberration
-  m_EditorClassIdentifier: 
-  active: 1
-  intensity:
-    m_OverrideState: 1
-    m_Value: 0.1
 --- !u!114 &-7303358178117790643
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -31,7 +15,7 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.9
   intensity:
     m_OverrideState: 1
     m_Value: 1
@@ -78,10 +62,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.2
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 0.75
   rounded:
     m_OverrideState: 0
     m_Value: 0
@@ -103,7 +87,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.1
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -128,10 +112,10 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 0.8201615, y: 0.8873954, z: 1, w: 0.0000000035673176}
+    m_Value: {x: 0.84470004, y: 0.9050467, z: 1, w: -0.07855312}
   gain:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.078534216}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.049689442}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +136,6 @@ MonoBehaviour:
   - {fileID: -6136871216939308105}
   - {fileID: -7011558710299706105}
   - {fileID: 7987440403566966871}
-  - {fileID: 5401615836968961225}
-  - {fileID: -7413111614841892286}
 --- !u!114 &849379129802519247
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -170,52 +152,6 @@ MonoBehaviour:
   mode:
     m_OverrideState: 1
     m_Value: 2
---- !u!114 &5401615836968961225
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01700fd266d6914ababb731e09af2eb, type: 3}
-  m_Name: DepthOfField
-  m_EditorClassIdentifier: 
-  active: 0
-  mode:
-    m_OverrideState: 1
-    m_Value: 2
-  gaussianStart:
-    m_OverrideState: 1
-    m_Value: 156.2
-  gaussianEnd:
-    m_OverrideState: 1
-    m_Value: 5
-  gaussianMaxRadius:
-    m_OverrideState: 1
-    m_Value: 0.5
-  highQualitySampling:
-    m_OverrideState: 0
-    m_Value: 0
-  focusDistance:
-    m_OverrideState: 1
-    m_Value: 1
-  aperture:
-    m_OverrideState: 1
-    m_Value: 12
-  focalLength:
-    m_OverrideState: 1
-    m_Value: 24
-  bladeCount:
-    m_OverrideState: 1
-    m_Value: 6
-  bladeCurvature:
-    m_OverrideState: 1
-    m_Value: 1
-  bladeRotation:
-    m_OverrideState: 1
-    m_Value: 45
 --- !u!114 &6908622558919248375
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -231,7 +167,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -0.1
   contrast:
     m_OverrideState: 1
     m_Value: 30
@@ -259,7 +195,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.21
+    m_Value: 0.15
   xMultiplier:
     m_OverrideState: 1
     m_Value: 1

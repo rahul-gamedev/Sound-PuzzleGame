@@ -4,4 +4,6 @@ using UnityEngine;
 public class SceneSO : ScriptableObject
 {
     public string SceneName;
+    public Vector3 EntryPosition;
+    public Quaternion EntryRotation;
 }

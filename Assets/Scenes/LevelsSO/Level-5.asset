@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Level-5
   m_EditorClassIdentifier: 
   SceneName: Level-5
+  EntryPosition: {x: 6.56, y: 5.01, z: 7.54}
+  EntryRotation: {x: 0, y: 0, z: 0, w: 0}

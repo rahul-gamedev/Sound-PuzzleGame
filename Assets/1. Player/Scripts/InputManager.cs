@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour
     private InputAction interactAction;
     private InputAction modifyAction;
     private InputAction switchAction;
+    private InputAction pauseAction;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class InputManager : MonoBehaviour
         interactAction = playerInput.actions.FindAction("Interact");
         modifyAction = playerInput.actions.FindAction("Modify");
         switchAction = playerInput.actions.FindAction("SwitchField");
+        pauseAction = playerInput.actions.FindAction("Pause");
     }
 
     public Vector2 MoveInput()
@@ -67,14 +69,18 @@ public class InputManager : MonoBehaviour
         return interactAction.triggered;
     }
 
+    public bool PauseInput()
+    {
+        return pauseAction.triggered;
+    }
+
     public bool SwitchInput()
     {
         return switchAction.triggered;
     }
+
     public float ModifyInput()
     {
         return modifyAction.ReadValue<Vector2>().y;
     }
-
-
 }

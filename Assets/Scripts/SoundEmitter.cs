@@ -84,14 +84,18 @@ public class SoundEmitter : MonoBehaviour
         UpdateReactors();
         OnConfigChange?.Invoke(Volume, Pitch);
     }
+    private void FixedUpdate()
+    {
+        UpdateReactors();
+    }
 
     private void UpdateReactors()
     {
-        reactors = Physics.OverlapSphere(transform.position, Range, NotReactors);
+        reactors = Physics.OverlapSphere(transform.position, Range*Volume, NotReactors);
 
         foreach (Collider reactor in reactors)
         {
-            if (reactor.TryGetComponent<SoundReactor>(out var soundReactor))
+            if (reactor.TryGetComponent<SoundReactor>(out var soundReactor) && audioSource.isPlaying)
                 soundReactor.React(this);
         }
     }

@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorReactor : SoundReactor, IInteractable
 {
     [SerializeField]
     private bool Locked;
     bool opened;
+
+    [SerializeField]
+    private float close;
+
+    [SerializeField]
+    private float open;
 
     public void OnInteract(Transform player)
     {
@@ -18,9 +25,9 @@ public class DoorReactor : SoundReactor, IInteractable
         {
             LeanTween.cancel(gameObject);
             if (opened)
-                LeanTween.rotateY(gameObject, 0f, 0.5f).setEaseOutCubic();
+                LeanTween.rotateY(gameObject, close, 0.5f).setEaseOutCubic();
             else
-                LeanTween.rotateY(gameObject, -105f, 0.5f).setEaseOutCubic();
+                LeanTween.rotateY(gameObject, open, 0.5f).setEaseOutCubic();
 
             opened = !opened;
         }

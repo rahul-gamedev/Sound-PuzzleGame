@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PickableObject : MonoBehaviour, IInteractable
@@ -46,6 +47,10 @@ public class PickableObject : MonoBehaviour, IInteractable
             rb.constraints = RigidbodyConstraints.None;
 
             transform.parent = null;
+            SceneManager.MoveGameObjectToScene(
+                gameObject,
+                SceneManager.GetSceneByName(LevelManager.current.currentScene.SceneName)
+            );
         }
         else
         {
